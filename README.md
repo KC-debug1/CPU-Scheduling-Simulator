@@ -25,24 +25,3 @@ No installation is required.
 - First Come First Serve
 
 Priority rule: smaller priority number means higher priority.
-
-## File Guide
-
-| File | Purpose |
-| --- | --- |
-| `index.html` | Main simulator page |
-| `styles.css` | Simulator layout and visual design |
-| `scheduler-core.js` | Algorithm logic and calculations |
-| `app.js` | Input handling, validation, and output rendering |
-| `report.html` | Printable assignment report |
-| `VIDEO_DEMO_SCRIPT.md` | Suggested video demonstration script |
-| `TEST_CASES.md` | Sample input and expected output summary |
-| `SUBMISSION_CHECKLIST.md` | Final submission checklist |
-
-## Details to Replace
-
-Before submission, update the remaining placeholder in `report.html`:
-
-- Programme
-
-Then print or export `report.html` to PDF.
