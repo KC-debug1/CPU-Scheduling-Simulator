@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CPU Scheduling Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CSN4224 Operating System</p>
+        <h1>CPU Scheduling Simulator</h1>
+      </div>
+      <div class="topbar-actions">
+        <button id="loadSampleButton" class="ghost-button" type="button">Sample</button>
+        <button id="printButton" class="ghost-button" type="button">Print</button>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <section class="input-panel" aria-labelledby="inputTitle">
+        <div class="section-head">
+          <div>
+            <h2 id="inputTitle">Process Input</h2>
+            <p id="processCountLabel">5 processes</p>
+          </div>
+          <button id="addProcessButton" type="button">Add</button>
+        </div>
+
+        <div class="control-grid">
+          <label>
+            Algorithm
+            <select id="algorithmSelect">
+              <option value="all">Compare all</option>
+              <option value="rr">Round Robin</option>
+              <option value="psjf">Preemptive SJF</option>
+              <option value="npsjf">Non-Preemptive SJF</option>
+              <option value="ppriority">Preemptive Priority</option>
+              <option value="nppriority">Non-Preemptive Priority</option>
+              <option value="fcfs">FCFS</option>
+            </select>
+          </label>
+          <label>
+            RR quantum
+            <input id="quantumInput" type="number" min="1" step="1" value="3">
+          </label>
+        </div>
+
+        <div class="table-wrap">
+          <table class="process-table">
+            <thead>
+              <tr>
+                <th>Process</th>
+                <th>Arrival</th>
+                <th>Burst</th>
+                <th>Priority</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="processTableBody"></tbody>
+          </table>
+        </div>
+
+        <div id="messageArea" class="message-area" role="status"></div>
+
+        <div class="button-row">
+          <button id="runButton" class="primary-button" type="button">Run Simulation</button>
+          <button id="resetButton" class="ghost-button" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="output-panel" aria-labelledby="outputTitle">
+        <div class="section-head">
+          <div>
+            <h2 id="outputTitle">Simulation Output</h2>
+            <p>Lower priority number runs first in priority scheduling.</p>
+          </div>
+        </div>
+
+        <div id="summaryArea"></div>
+        <div id="resultsArea" class="results-stack"></div>
+      </section>
+    </main>
+
+    <script src="scheduler-core.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
